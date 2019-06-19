@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import logoIcon from './images/logo.svg';
 
 export const Topbar = styled.div`
   display: flex;
@@ -11,4 +12,11 @@ export const Topbar = styled.div`
   right: 0;
   left: 0;
   z-index: 2;
+`;
+
+export const Logo = styled.div`
+  height: 36px;
+  width: 36px;
+  margin: 16px 16px 16px 36px;
+  background-image: url(${logoIcon});
 `;
