@@ -10,6 +10,13 @@ const List = ({ list }) => (
         <s.Item key={item.id}>
           <s.ItemName>{item.name}</s.ItemName>
           <s.ItemText>{item.text}</s.ItemText>
+
+          <s.ItemMeta>
+            <s.ItemAssignee>
+              {item.assignee && item.assignee.name}
+            </s.ItemAssignee>
+            <s.ItemUpdatedAt>{item.updatedAt}</s.ItemUpdatedAt>
+          </s.ItemMeta>
         </s.Item>
       ))}
     </s.Items>

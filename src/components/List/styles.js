@@ -46,3 +46,18 @@ export const ItemText = styled.p`
   line-height: 24px;
   color: rgba(100, 102, 120, 0.54);
 `;
+
+export const ItemMeta = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const ItemAssignee = styled.span``;
+
+export const ItemUpdatedAt = styled.span`
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  color: #B4BBC8;
+`;

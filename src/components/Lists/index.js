@@ -14,30 +14,33 @@ class Lists extends Component {
             name: "Nulla volutpat aliquam velit",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 1,
               name: "OZ"
-            }
+            },
+            updatedAt: 'Today'
           },
           {
             id: 2,
             name: "Facilisis in pretium nisl aliquet",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 2,
               name: "LE"
-            }
+            },
+            updatedAt: 'Two days ago'
           },
           {
             id: 3,
             name: "Eget porttitor lorem",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 3,
               name: "ME"
-            }
+            },
+            updatedAt: 'Today'
           }
         ]
       },
@@ -50,17 +53,18 @@ class Lists extends Component {
             name: "Eget porttitor lorem",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 4,
               name: "AM"
-            }
+            },
+            updatedAt: 'A week ago'
           },
           {
             id: 5,
             name: "Consectetur adipiscing elit",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 1,
               name: "OZ"
             }
@@ -70,7 +74,7 @@ class Lists extends Component {
             name: "Nulla volutpat aliquam velit",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 2,
               name: "LE"
             }
@@ -86,7 +90,7 @@ class Lists extends Component {
             name: "Ac tristique libero volutpat at",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 2,
               name: "LE"
             }
@@ -96,7 +100,7 @@ class Lists extends Component {
             name: "Phasellus iaculis neque",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 1,
               name: "OZ"
             }
@@ -106,7 +110,7 @@ class Lists extends Component {
             name: "Facilisis in pretium nisl aliquet",
             text:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-            author: {
+            assignee: {
               id: 4,
               name: "AM"
             }
