@@ -17,6 +17,12 @@ export const Topbar = styled.div`
 export const Logo = styled.div`
   height: 36px;
   width: 36px;
-  margin: 16px 16px 16px 36px;
+  margin: 16px 36px 16px 36px;
   background-image: url(${logoIcon});
+`;
+
+export const Separator = styled.div`
+  background-color: #F7F8F9;
+  height: 36px;
+  width: 3px;
 `;
