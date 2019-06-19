@@ -4,6 +4,7 @@ import Topbar from "../../components/Topbar";
 import Content from "../../components/Content";
 import Sidebar from "../../components/Sidebar";
 import Main from "../../components/Main";
+import Lists from "../../components/Lists";
 
 class Dashboard extends Component {
   render() {
@@ -13,7 +14,10 @@ class Dashboard extends Component {
 
         <Content>
           <Sidebar />
-          <Main />
+
+          <Main>
+            <Lists />
+          </Main>
         </Content>
       </Screen>
     );
