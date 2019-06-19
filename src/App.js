@@ -1,8 +1,9 @@
 import React from 'react';
+import DashboardScreen from './screens/Dashboard';
 
 function App() {
   return (
-    <div>App</div>
+    <DashboardScreen />
   );
 }
 
