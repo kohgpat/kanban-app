@@ -4,7 +4,8 @@ export const List = styled.li`
   min-width: 311px;
   flex-shrink: 0;
   cursor: pointer;
-  padding-right: 40px;
+  padding: 1rem;
+  margin: 1rem;
 `;
 
 export const Name = styled.h4`
