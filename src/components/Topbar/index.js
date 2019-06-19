@@ -7,7 +7,13 @@ const Topbar = () => (
 
     <s.Separator />
 
-    <s.Separator pullRight />
+    <s.Controls>
+      <s.Control>
+        <s.ControlIcon notification />
+      </s.Control>
+    </s.Controls>
+
+    <s.Separator />
 
     <s.CurrentUser>
       <s.CurrentUserIcon />

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import logoIcon from './images/logo.svg';
+import notificationIcon from './images/notification.svg';
 import avatar from './images/avatar.png';
 
 export const Topbar = styled.div`
@@ -26,10 +27,29 @@ export const Separator = styled.div`
   background-color: #F7F8F9;
   height: 36px;
   width: 3px;
+`;
 
-  ${props => props.pullRight && `
-    margin-left: auto;
-  `};
+export const Controls = styled.div`
+  margin-left: auto;
+  margin-right: 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+export const Control = styled.button`
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+`;
+
+export const ControlIcon = styled.div`
+  height: 22px;
+  width: 22px;
+
+  ${props => props.notification && `
+    background-image: url(${notificationIcon});
+  `}
 `;
 
 export const CurrentUser = styled.div`
@@ -37,6 +57,7 @@ export const CurrentUser = styled.div`
   align-items: center;
   padding: 0 32px 0 28px;
   height: 100%;
+  cursor: pointer;
 `;
 
 export const CurrentUserIcon = styled.div`
