@@ -1,14 +1,10 @@
 import styled from "styled-components";
 
 export const List = styled.li`
-  width: 311px;
+  min-width: 311px;
   flex-shrink: 0;
-  padding-left: 1rem;
   cursor: pointer;
-
-  &:not(:last-child) {
-    margin-right: 40px;
-  }
+  padding-right: 40px;
 `;
 
 export const Name = styled.h4`
