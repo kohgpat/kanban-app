@@ -7,6 +7,11 @@ const Topbar = () => (
 
     <s.Separator />
 
+    <s.SearchBar>
+      <s.SearchBarIcon />
+      <s.SearchBarInput />
+    </s.SearchBar>
+
     <s.Controls>
       <s.Control>
         <s.ControlIcon notification />
