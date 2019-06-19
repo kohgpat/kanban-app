@@ -1,3 +1,7 @@
+## Kanban (React app demo)
+
+Based on freebie sketch from https://dribbble.com/shots/6330734-FREEBIE-Kanban-app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
