@@ -44,22 +44,74 @@ class Lists extends Component {
       {
         id: 2,
         name: "Todo",
-        items: []
-      },
-      {
-        id: 3,
-        name: "In progress - Design",
-        items: []
-      },
-      {
-        id: 4,
-        name: "In progress - Development",
-        items: []
+        items: [
+          {
+            id: 4,
+            name: "Eget porttitor lorem",
+            text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
+            author: {
+              id: 4,
+              name: "AM"
+            }
+          },
+          {
+            id: 5,
+            name: "Consectetur adipiscing elit",
+            text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
+            author: {
+              id: 1,
+              name: "OZ"
+            }
+          },
+          {
+            id: 6,
+            name: "Nulla volutpat aliquam velit",
+            text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
+            author: {
+              id: 2,
+              name: "LE"
+            }
+          },
+        ]
       },
       {
         id: 5,
         name: "Done",
-        items: []
+        items: [
+          {
+            id: 7,
+            name: "Ac tristique libero volutpat at",
+            text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
+            author: {
+              id: 2,
+              name: "LE"
+            }
+          },
+          {
+            id: 8,
+            name: "Phasellus iaculis neque",
+            text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
+            author: {
+              id: 1,
+              name: "OZ"
+            }
+          },
+          {
+            id: 9,
+            name: "Facilisis in pretium nisl aliquet",
+            text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
+            author: {
+              id: 4,
+              name: "AM"
+            }
+          },
+        ]
       }
     ]
   };
