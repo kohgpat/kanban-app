@@ -160,26 +160,24 @@ class Lists extends Component {
       return;
     } else {
       // Move items between lists
-      const sourceListItemIds = Array.from(sourceList.itemIds);
-      sourceListItemIds.splice(source.index, 1);
-      const updatedSourceList = {
-        ...sourceList,
-        itemIds: sourceListItemIds
-      };
+      const sourceItemIds = Array.from(sourceList.itemIds);
+      sourceItemIds.splice(source.index, 1);
 
-      const destinationListItemIds = Array.from(destinationList.itemIds);
-      destinationListItemIds.splice(destination.index, 0, draggableId);
-      const updatedDestinationList = {
-        ...destinationList,
-        itemIds: destinationListItemIds
-      };
+      const destinationItemIds = Array.from(destinationList.itemIds);
+      destinationItemIds.splice(destination.index, 0, draggableId);
 
       this.setState({
         ...this.state,
         lists: {
           ...this.state.lists,
-          [updatedSourceList.id]: updatedSourceList,
-          [updatedDestinationList.id]: updatedDestinationList
+          [sourceList.id]: {
+            ...sourceList,
+            itemIds: sourceItemIds
+          },
+          [destinationList.id]: {
+            ...destinationList,
+            itemIds: destinationItemIds
+          }
         }
       });
 
