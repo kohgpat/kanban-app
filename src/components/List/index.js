@@ -1,12 +1,12 @@
 import React from "react";
 import * as s from "./styles";
 
-const List = ({ list }) => (
+const List = ({ list, items }) => (
   <s.List>
     <s.Name>{list.name}</s.Name>
 
     <s.Items>
-      {list.items.map(item => (
+      {items.map(item => (
         <s.Item key={item.id}>
           <s.ItemName>{item.name}</s.ItemName>
           <s.ItemText>{item.text}</s.ItemText>
