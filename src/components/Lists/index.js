@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { DragDropContext } from 'react-beautiful-dnd';
 import * as s from "./styles";
 import List from "../List";
 
@@ -125,10 +126,12 @@ class Lists extends Component {
 
     return (
       <s.Lists>
-        {lists.map(list => {
-          const items = list.itemIds.map(itemId => this.state.items[itemId]);
-          return <List key={list.id} list={list} items={items} />;
-        })}
+        <DragDropContext>
+          {lists.map(list => {
+            const items = list.itemIds.map(itemId => this.state.items[itemId]);
+            return <List key={list.id} list={list} items={items} />;
+          })}
+        </DragDropContext>
       </s.Lists>
     );
   }
