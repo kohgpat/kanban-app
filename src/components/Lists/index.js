@@ -139,6 +139,7 @@ class Lists extends Component {
     const destinationList = this.state.lists[destination.droppableId];
 
     if (sourceList === destinationList) {
+      // Reorder items in the same list
       const itemIds = Array.from(sourceList.itemIds);
       itemIds.splice(source.index, 1);
       itemIds.splice(destination.index, 0, draggableId);
@@ -155,7 +156,34 @@ class Lists extends Component {
           [list.id]: list
         }
       });
+
+      return;
     } else {
+      // Move items between lists
+      const sourceListItemIds = Array.from(sourceList.itemIds);
+      sourceListItemIds.splice(source.index, 1);
+      const updatedSourceList = {
+        ...sourceList,
+        itemIds: sourceListItemIds
+      };
+
+      const destinationListItemIds = Array.from(destinationList.itemIds);
+      destinationListItemIds.splice(destination.index, 0, draggableId);
+      const updatedDestinationList = {
+        ...destinationList,
+        itemIds: destinationListItemIds
+      };
+
+      this.setState({
+        ...this.state,
+        lists: {
+          ...this.state.lists,
+          [updatedSourceList.id]: updatedSourceList,
+          [updatedDestinationList.id]: updatedDestinationList
+        }
+      });
+
+      return;
     }
   };
 
