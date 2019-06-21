@@ -34,14 +34,14 @@ const initialState = {
       name: "Nulla volutpat aliquam velit",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      updatedAt: "Today"
+      updatedAt: new Date()
     },
     2: {
       id: 2,
       name: "Facilisis in pretium nisl aliquet",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      updatedAt: "Two days ago"
+      updatedAt: new Date()
     },
     3: {
       id: 3,
@@ -49,49 +49,49 @@ const initialState = {
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
 
-      updatedAt: "Today"
+      updatedAt: new Date()
     },
     4: {
       id: 4,
       name: "Eget porttitor lorem",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-
-      updatedAt: "A week ago"
+      updatedAt: new Date()
     },
     5: {
       id: 5,
       name: "Consectetur adipiscing elit",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      updatedAt: "Today"
+      updatedAt: new Date()
     },
     6: {
       id: 6,
       name: "Nulla volutpat aliquam velit",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      updatedAt: "Now"
+      updatedAt: new Date()
     },
     7: {
       id: 7,
       name: "Ac tristique libero volutpat at",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      updatedAt: "Yesterday"
+      updatedAt: new Date()
     },
     8: {
       id: 8,
       name: "Phasellus iaculis neque",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      updatedAt: "Now"
+      updatedAt: new Date()
     },
     9: {
       id: 9,
       name: "Facilisis in pretium nisl aliquet",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar"
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
+      updatedAt: new Date()
     }
   }
 };
@@ -180,7 +180,7 @@ function listsReducer(state, action) {
               id,
               name: "",
               text: "",
-              updatedAt: "",
+              updatedAt: new Date(),
               isEditing: true
             }
           }
@@ -211,6 +211,7 @@ function listsReducer(state, action) {
             ...state.lists.items,
             [action.item.id]: {
               ...action.item,
+              updatedAt: new Date(),
               isEditing: false
             }
           }
