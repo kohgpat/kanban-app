@@ -190,6 +190,21 @@ function listsReducer(state, action) {
         }
       };
     }
+    case "LISTS_ITEMS_TOGGLE_EDIT": {
+      return {
+        ...state,
+        lists: {
+          ...state.lists,
+          items: {
+            ...state.lists.items,
+            [action.item.id]: {
+              ...action.item,
+              isEditing: !action.item.isEditing
+            }
+          }
+        }
+      };
+    }
     default: {
       throw new Error(`Unsupported action type: ${action.type}`);
     }

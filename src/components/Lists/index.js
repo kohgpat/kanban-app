@@ -59,6 +59,13 @@ function Lists() {
     });
   };
 
+  const handleToggleItemEdit = item => {
+    dispatch({
+      type: "LISTS_ITEMS_TOGGLE_EDIT",
+      item
+    });
+  };
+
   return (
     <s.Lists>
       <DragDropContext onDragEnd={onDragEnd}>
@@ -85,6 +92,7 @@ function Lists() {
               list={list}
               items={items}
               onAddItem={handleAddItem}
+              onItemEdit={handleToggleItemEdit}
             />
           );
         })}
