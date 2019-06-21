@@ -1,30 +1,47 @@
-import React from 'react';
-import * as s from './styles';
+import React, { useState } from "react";
+import { useLists } from "../../contexts/lists";
+import * as s from "./styles";
 
-const Topbar = () => (
-  <s.Topbar>
-    <s.Logo />
+const Topbar = () => {
+  const { dispatch } = useLists();
 
-    <s.Separator />
+  const [query, setQuery] = useState("");
 
-    <s.SearchBar>
-      <s.SearchBarIcon />
-      <s.SearchBarInput />
-    </s.SearchBar>
+  const filterListsItems = term => {
+    dispatch({ type: "LISTS_ITEMS_SET_FILTER", term });
+  };
 
-    <s.Controls>
-      <s.Control>
-        <s.ControlIcon notification />
-      </s.Control>
-    </s.Controls>
+  const handleChangeSearchQuery = e => {
+    const { value } = e.target;
+    setQuery(value);
+    filterListsItems(value);
+  };
 
-    <s.Separator />
+  return (
+    <s.Topbar>
+      <s.Logo />
 
-    <s.CurrentUser>
-      <s.CurrentUserIcon />
-      <s.CurrentUserName>Leonetta Lloyd</s.CurrentUserName>
-    </s.CurrentUser>
-  </s.Topbar>
-);
+      <s.Separator />
+
+      <s.SearchBar>
+        <s.SearchBarIcon />
+        <s.SearchBarInput value={query} onChange={handleChangeSearchQuery} />
+      </s.SearchBar>
+
+      <s.Controls>
+        <s.Control>
+          <s.ControlIcon notification />
+        </s.Control>
+      </s.Controls>
+
+      <s.Separator />
+
+      <s.CurrentUser>
+        <s.CurrentUserIcon />
+        <s.CurrentUserName>Leonetta Lloyd</s.CurrentUserName>
+      </s.CurrentUser>
+    </s.Topbar>
+  );
+};
 
 export default Topbar;

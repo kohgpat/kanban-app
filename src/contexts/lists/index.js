@@ -3,6 +3,11 @@ import React from "react";
 const ListsContext = React.createContext();
 
 const initialState = {
+  filter: {
+    items: {
+      term: ""
+    }
+  },
   lists: {
     1: {
       id: 1,
@@ -163,6 +168,21 @@ function listsReducer(state, action) {
             [action.destinationList.id]: {
               ...action.destinationList,
               itemIds: destinationItemIds
+            }
+          }
+        }
+      };
+    }
+    case "LISTS_ITEMS_SET_FILTER": {
+      return {
+        ...state,
+        lists: {
+          ...state.lists,
+          filter: {
+            ...state.lists.filter,
+            items: {
+              ...state.lists.filter.items,
+              term: action.term
             }
           }
         }

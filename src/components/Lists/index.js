@@ -1,6 +1,6 @@
 import React from "react";
 import { DragDropContext } from "react-beautiful-dnd";
-import { ListsProvider, useLists } from "../../contexts/lists";
+import { useLists } from "../../contexts/lists";
 import List from "../List";
 import * as s from "./styles";
 
@@ -56,7 +56,23 @@ function Lists() {
     <s.Lists>
       <DragDropContext onDragEnd={onDragEnd}>
         {lists.map(list => {
-          const items = list.itemIds.map(itemId => state.lists.items[itemId]);
+          const items = list.itemIds
+            .map(itemId => state.lists.items[itemId])
+            .filter(item => {
+              const filterTerm =
+                state.lists.filter.items.term &&
+                state.lists.filter.items.term.toLowerCase();
+
+              if (!filterTerm) {
+                return item;
+              }
+
+              return (
+                item.name.toLowerCase().includes(filterTerm) ||
+                item.text.toLowerCase().includes(filterTerm) ||
+                item.assignee.name.toLowerCase().includes(filterTerm)
+              );
+            });
           return <List key={list.id} list={list} items={items} />;
         })}
       </DragDropContext>
@@ -64,12 +80,4 @@ function Lists() {
   );
 }
 
-function WiredLists() {
-  return (
-    <ListsProvider>
-      <Lists />
-    </ListsProvider>
-  );
-}
-
-export default WiredLists;
+export default Lists;

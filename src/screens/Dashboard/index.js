@@ -5,21 +5,24 @@ import Content from "../../components/Content";
 import Sidebar from "../../components/Sidebar";
 import Main from "../../components/Main";
 import Lists from "../../components/Lists";
+import { ListsProvider } from "../../contexts/lists";
 
 class Dashboard extends Component {
   render() {
     return (
-      <Screen>
-        <Topbar />
+      <ListsProvider>
+        <Screen>
+          <Topbar />
 
-        <Content>
-          <Sidebar />
+          <Content>
+            <Sidebar />
 
-          <Main>
-            <Lists />
-          </Main>
-        </Content>
-      </Screen>
+            <Main>
+              <Lists />
+            </Main>
+          </Content>
+        </Screen>
+      </ListsProvider>
     );
   }
 }
