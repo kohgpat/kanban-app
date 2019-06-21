@@ -73,6 +73,14 @@ function Lists() {
     });
   };
 
+  const handleToggleItemDelete = (list, item) => {
+    dispatch({
+      type: "LISTS_ITEMS_DELETE",
+      list,
+      item
+    });
+  };
+
   return (
     <s.Lists>
       <DragDropContext onDragEnd={onDragEnd}>
@@ -100,6 +108,7 @@ function Lists() {
               items={items}
               onAddItem={handleAddItem}
               onItemEdit={handleToggleItemEdit}
+              onItemDelete={handleToggleItemDelete}
               onItemSave={handleItemSave}
             />
           );

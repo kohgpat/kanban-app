@@ -2,9 +2,11 @@ import React from "react";
 import * as s from "./styles";
 
 const DisplayItem = ({
+  list,
   item,
   innerRef,
   onItemEdit,
+  onItemDelete,
   onItemSave,
   ...restProps
 }) => {
@@ -19,7 +21,9 @@ const DisplayItem = ({
 
       <s.Controls>
         <s.EditButton onClick={() => onItemEdit(item)}>Edit</s.EditButton>
-        <s.DeleteButton onClick={() => {}}>Delete</s.DeleteButton>
+        <s.DeleteButton onClick={() => onItemDelete(list, item)}>
+          Delete
+        </s.DeleteButton>
       </s.Controls>
     </s.Item>
   );
