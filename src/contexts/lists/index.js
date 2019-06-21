@@ -17,21 +17,16 @@ const initialState = {
     },
     2: {
       id: 2,
-      name: "Todo",
+      name: "In progress",
       itemIds: [4, 5, 6]
     },
     3: {
       id: 3,
-      name: "In progress",
-      itemIds: [7, 8, 9]
-    },
-    4: {
-      id: 4,
       name: "Done",
-      itemIds: []
+      itemIds: [7, 8, 9]
     }
   },
-  listIds: [1, 2, 3, 4],
+  listIds: [1, 2, 3],
   items: {
     1: {
       id: 1,
