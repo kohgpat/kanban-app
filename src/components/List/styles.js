@@ -19,6 +19,7 @@ export const Items = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
+  min-height: 100%;
 `;
 
 export const Item = styled.li`
