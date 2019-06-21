@@ -67,10 +67,8 @@ function Lists() {
   };
 
   const handleItemSave = item => {
-    console.log(item);
-
     dispatch({
-      type: "LISTS_ITEMS_TOGGLE_EDIT",
+      type: "LISTS_ITEMS_SAVE",
       item
     });
   };

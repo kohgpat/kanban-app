@@ -24,7 +24,7 @@ const EditItem = ({ item, innerRef, onItemEdit, onItemSave, ...restProps }) => {
   useEffect(() => {
     const ref = nameInputRef.current;
     ref.focus();
-  }, [nameInputRef]);
+  }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
