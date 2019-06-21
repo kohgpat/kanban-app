@@ -1,19 +1,6 @@
 import React, { useState, useEffect } from "react";
+import DisplayItem from "./DisplayItem";
 import * as s from "./styles";
-
-const DisplayItem = ({ item, innerRef, onItemEdit, onItemSave, ...restProps }) => {
-  return (
-    <s.Item ref={innerRef} {...restProps}>
-      <s.Name>{item.name}</s.Name>
-      <s.Text>{item.text}</s.Text>
-
-      <s.Meta>
-        <s.EditToggle onClick={() => onItemEdit(item)}>Edit</s.EditToggle>
-        <s.UpdatedAt>{item.updatedAt}</s.UpdatedAt>
-      </s.Meta>
-    </s.Item>
-  );
-};
 
 const EditItem = ({ item, innerRef, onItemEdit, onItemSave, ...restProps }) => {
   const [name, setName] = useState(item.name || "");
