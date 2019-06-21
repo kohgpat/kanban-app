@@ -3,7 +3,7 @@ import { Droppable, Draggable } from "react-beautiful-dnd";
 import Item from "../Item";
 import * as s from "./styles";
 
-const List = ({ list, items, onAddItem, onItemEdit }) => (
+const List = ({ list, items, onAddItem, onItemEdit, onItemSave }) => (
   <s.List>
     <s.Header>
       <s.Name>{list.name}</s.Name>
@@ -25,6 +25,7 @@ const List = ({ list, items, onAddItem, onItemEdit }) => (
                   {...provided.dragHandleProps}
                   item={item}
                   onItemEdit={onItemEdit}
+                  onItemSave={onItemSave}
                 />
               )}
             </Draggable>

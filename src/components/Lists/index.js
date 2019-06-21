@@ -66,6 +66,15 @@ function Lists() {
     });
   };
 
+  const handleItemSave = item => {
+    console.log(item);
+
+    dispatch({
+      type: "LISTS_ITEMS_TOGGLE_EDIT",
+      item
+    });
+  };
+
   return (
     <s.Lists>
       <DragDropContext onDragEnd={onDragEnd}>
@@ -93,6 +102,7 @@ function Lists() {
               items={items}
               onAddItem={handleAddItem}
               onItemEdit={handleToggleItemEdit}
+              onItemSave={handleItemSave}
             />
           );
         })}
