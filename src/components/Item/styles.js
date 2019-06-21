@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 export const ButtonStyles = `
   border: 1px solid #b4bbc8;
   border-radius: 2px;
