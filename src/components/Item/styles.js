@@ -85,6 +85,10 @@ export const Row = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const Label = styled.label`
