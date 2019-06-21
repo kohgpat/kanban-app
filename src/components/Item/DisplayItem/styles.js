@@ -7,7 +7,6 @@ export const Item = styled.li`
   border-radius: 2px;
   cursor: pointer;
   width: 311px;
-  height: 158px;
   padding: 1rem;
   margin-bottom: 20px;
 `;
@@ -33,10 +32,7 @@ export const Meta = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
-
-export const EditToggle = styled.button.attrs({ type: "button" })`
-  ${ButtonStyles}
+  margin-bottom: 12px;
 `;
 
 export const UpdatedAt = styled.span`
@@ -44,4 +40,31 @@ export const UpdatedAt = styled.span`
   line-height: 18px;
   font-weight: 600;
   color: #b4bbc8;
+`;
+
+export const Controls = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const EditToggle = styled.button.attrs({ type: "button" })`
+  ${ButtonStyles}
+`;
+
+export const DeleteButton = styled.button.attrs({ type: "button" })`
+  ${ButtonStyles}
+
+  margin-left: auto;
+  color: #000;
+
+  &:focus,
+  &:hover {
+    border: 1px solid #E30B2C;
+    color: #000;
+  }
+
+  &:active {
+    color: #fff;
+    background-color: #E30B2C;
+  }
 `;
