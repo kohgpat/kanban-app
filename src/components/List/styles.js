@@ -75,19 +75,6 @@ export const ItemMeta = styled.div`
   justify-content: space-between;
 `;
 
-export const ItemAssignee = styled.span`
-  height: 28px;
-  width: 28px;
-  background-color: #3591FB;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const ItemUpdatedAt = styled.span`
   font-size: 13px;
   line-height: 18px;

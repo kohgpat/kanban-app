@@ -38,10 +38,6 @@ const initialState = {
       name: "Nulla volutpat aliquam velit",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 1,
-        name: "OZ"
-      },
       updatedAt: "Today"
     },
     2: {
@@ -49,10 +45,6 @@ const initialState = {
       name: "Facilisis in pretium nisl aliquet",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 2,
-        name: "LE"
-      },
       updatedAt: "Two days ago"
     },
     3: {
@@ -60,10 +52,7 @@ const initialState = {
       name: "Eget porttitor lorem",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 3,
-        name: "ME"
-      },
+
       updatedAt: "Today"
     },
     4: {
@@ -71,10 +60,7 @@ const initialState = {
       name: "Eget porttitor lorem",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 4,
-        name: "AM"
-      },
+
       updatedAt: "A week ago"
     },
     5: {
@@ -82,50 +68,34 @@ const initialState = {
       name: "Consectetur adipiscing elit",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 1,
-        name: "OZ"
-      }
+      updatedAt: "Today"
     },
     6: {
       id: 6,
       name: "Nulla volutpat aliquam velit",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 2,
-        name: "LE"
-      }
+      updatedAt: "Now"
     },
     7: {
       id: 7,
       name: "Ac tristique libero volutpat at",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 2,
-        name: "LE"
-      }
+      updatedAt: "Yesterday"
     },
     8: {
       id: 8,
       name: "Phasellus iaculis neque",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 1,
-        name: "OZ"
-      }
+      updatedAt: "Now"
     },
     9: {
       id: 9,
       name: "Facilisis in pretium nisl aliquet",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar",
-      assignee: {
-        id: 4,
-        name: "AM"
-      }
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat ar"
     }
   }
 };
@@ -214,10 +184,6 @@ function listsReducer(state, action) {
               id,
               name: "New Item",
               text: "Text placeholder",
-              assignee: {
-                id: 1,
-                name: "AL"
-              },
               updatedAt: "Today"
             }
           }

@@ -76,11 +76,17 @@ function Lists() {
 
               return (
                 item.name.toLowerCase().includes(filterTerm) ||
-                item.text.toLowerCase().includes(filterTerm) ||
-                item.assignee.name.toLowerCase().includes(filterTerm)
+                item.text.toLowerCase().includes(filterTerm)
               );
             });
-          return <List key={list.id} list={list} items={items} onAddItem={handleAddItem} />;
+          return (
+            <List
+              key={list.id}
+              list={list}
+              items={items}
+              onAddItem={handleAddItem}
+            />
+          );
         })}
       </DragDropContext>
     </s.Lists>
