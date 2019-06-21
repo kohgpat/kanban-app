@@ -21,6 +21,10 @@ export const Row = styled.div`
 
 export const Label = styled.label`
   margin-bottom: 0.5rem;
+  color: rgba(100, 102, 120, 0.54);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
 `;
 
 export const Input = styled.input.attrs({ type: "text" })`
