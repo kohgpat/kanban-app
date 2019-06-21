@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
+import useKeyPress from "../../../hooks/useKeyPress";
 import * as s from "./styles";
 
 const EditItem = ({ item, innerRef, onItemEdit, onItemSave, ...restProps }) => {
   const [name, setName] = useState(item.name || "");
   const [text, setText] = useState(item.text || "");
+  const closeFormKey = useKeyPress("Escape");
+
+  if (closeFormKey) {
+    onItemEdit(item);
+  }
 
   const nameInputRef = React.createRef();
 
