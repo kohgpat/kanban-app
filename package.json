@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "autosize": "^4.0.2",
+    "lodash": "^4.17.11",
     "nanoid": "^2.0.3",
     "react": "^16.8.6",
     "react-beautiful-dnd": "^11.0.4",
