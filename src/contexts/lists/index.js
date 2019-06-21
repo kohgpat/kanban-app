@@ -182,9 +182,10 @@ function listsReducer(state, action) {
             ...state.lists.items,
             [id]: {
               id,
-              name: "New Item",
-              text: "Text placeholder",
-              updatedAt: "Today"
+              name: "",
+              text: "",
+              updatedAt: "",
+              isEditing: true
             }
           }
         }
