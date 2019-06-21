@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import autosize from "autosize";
 import useKeyPress from "../../../hooks/useKeyPress";
 import * as s from "./styles";
 
@@ -12,11 +13,17 @@ const EditItem = ({ item, innerRef, onItemEdit, onItemSave, ...restProps }) => {
   }
 
   const nameInputRef = React.createRef();
+  const textInputRef = React.createRef();
 
   useEffect(() => {
     const ref = nameInputRef.current;
     ref.focus();
   }, []);
+
+  useEffect(() => {
+    const ref = textInputRef.current;
+    autosize(ref);
+  });
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -45,6 +52,7 @@ const EditItem = ({ item, innerRef, onItemEdit, onItemSave, ...restProps }) => {
         <s.Textarea
           name="text"
           value={text}
+          ref={textInputRef}
           onChange={e => setText(e.target.value)}
         />
       </s.Row>
