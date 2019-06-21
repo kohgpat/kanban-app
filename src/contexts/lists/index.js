@@ -1,5 +1,6 @@
 import React from "react";
 import nanoid from "nanoid";
+import omit from "lodash/omit";
 
 const ListsContext = React.createContext();
 
@@ -213,6 +214,24 @@ function listsReducer(state, action) {
               isEditing: false
             }
           }
+        }
+      };
+    }
+    case "LISTS_ITEMS_DELETE": {
+      return {
+        ...state,
+        lists: {
+          ...state.lists,
+          lists: {
+            ...state.lists.lists,
+            [action.list.id]: {
+              ...state.lists.lists[action.list.id],
+              itemIds: state.lists.lists[action.list.id].itemIds.filter(
+                id => id !== action.item.id
+              )
+            }
+          },
+          items: omit(state.lists.items, [action.item.id])
         }
       };
     }

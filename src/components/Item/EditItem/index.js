@@ -3,13 +3,25 @@ import autosize from "autosize";
 import useKeyPress from "../../../hooks/useKeyPress";
 import * as s from "./styles";
 
-const EditItem = ({ item, innerRef, onItemEdit, onItemSave, ...restProps }) => {
+const EditItem = ({
+  list,
+  item,
+  innerRef,
+  onItemEdit,
+  onItemDelete,
+  onItemSave,
+  ...restProps
+}) => {
   const [name, setName] = useState(item.name || "");
   const [text, setText] = useState(item.text || "");
   const closeFormKey = useKeyPress("Escape");
 
   if (closeFormKey) {
-    onItemEdit(item);
+    if (name === "" && text === "") {
+      onItemDelete(list, item);
+    } else {
+      onItemEdit(item);
+    }
   }
 
   const nameInputRef = React.createRef();
@@ -32,11 +44,7 @@ const EditItem = ({ item, innerRef, onItemEdit, onItemSave, ...restProps }) => {
   };
 
   return (
-    <s.ItemForm
-      ref={innerRef}
-      {...restProps}
-      onSubmit={handleSubmit}
-    >
+    <s.ItemForm ref={innerRef} {...restProps} onSubmit={handleSubmit}>
       <s.Row>
         <s.Label>Name</s.Label>
         <s.Input
