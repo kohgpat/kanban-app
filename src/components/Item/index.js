@@ -4,13 +4,13 @@ import * as s from "./styles";
 const Item = ({ item, innerRef, ...restProps }) => {
   return (
     <s.Item ref={innerRef} {...restProps}>
-      <s.ItemName>{item.name}</s.ItemName>
-      <s.ItemText>{item.text}</s.ItemText>
+      <s.Name>{item.name}</s.Name>
+      <s.Text>{item.text}</s.Text>
 
-      <s.ItemMeta>
+      <s.Meta>
         <s.EditToggle>Edit</s.EditToggle>
-        <s.ItemUpdatedAt>{item.updatedAt}</s.ItemUpdatedAt>
-      </s.ItemMeta>
+        <s.UpdatedAt>{item.updatedAt}</s.UpdatedAt>
+      </s.Meta>
     </s.Item>
   );
 };
