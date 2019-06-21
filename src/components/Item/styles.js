@@ -5,6 +5,7 @@ export const ButtonStyles = `
   font-size: 13px;
   font-weight: 600;
   padding: 0.5rem 1rem;
+  cursor: pointer;
 
   &:hover,
   &:focus {
