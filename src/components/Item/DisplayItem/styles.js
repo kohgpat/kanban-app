@@ -47,7 +47,7 @@ export const Controls = styled.div`
   align-items: center;
 `;
 
-export const EditToggle = styled.button.attrs({ type: "button" })`
+export const EditButton = styled.button.attrs({ type: "button" })`
   ${ButtonStyles}
 `;
 

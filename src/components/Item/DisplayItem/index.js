@@ -18,7 +18,7 @@ const DisplayItem = ({
       </s.Meta>
 
       <s.Controls>
-        <s.EditToggle onClick={() => onItemEdit(item)}>Edit</s.EditToggle>
+        <s.EditButton onClick={() => onItemEdit(item)}>Edit</s.EditButton>
         <s.DeleteButton onClick={() => {}}>Delete</s.DeleteButton>
       </s.Controls>
     </s.Item>
