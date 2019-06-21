@@ -32,6 +32,26 @@ export const ItemMeta = styled.div`
   justify-content: space-between;
 `;
 
+export const EditToggle = styled.button.attrs({ type: "button" })`
+  border: 1px solid #b4bbc8;
+  border-radius: 2px;
+  color: #b4bbc8;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+
+  &:hover,
+  &:focus {
+    color: #000;
+    border-color: #3B93F8;
+  }
+
+  &:active {
+    color: #fff;
+    background-color: #3B93F8;
+  }
+`;
+
 export const ItemUpdatedAt = styled.span`
   font-size: 13px;
   line-height: 18px;

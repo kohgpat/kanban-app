@@ -8,6 +8,7 @@ const Item = ({ item, innerRef, ...restProps }) => {
       <s.ItemText>{item.text}</s.ItemText>
 
       <s.ItemMeta>
+        <s.EditToggle>Edit</s.EditToggle>
         <s.ItemUpdatedAt>{item.updatedAt}</s.ItemUpdatedAt>
       </s.ItemMeta>
     </s.Item>
