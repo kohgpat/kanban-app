@@ -7,8 +7,8 @@ const List = ({ list, items }) => (
     <s.Name>{list.name}</s.Name>
 
     <Droppable droppableId={list.id}>
-      {provided => (
-        <s.Items ref={provided.innerRef}>
+      {(provided, snapshot) => (
+        <s.Items ref={provided.innerRef} isDraggingOver={snapshot.isDraggingOver}>
           {items.map((item, itemIndex) => (
             <Draggable key={item.id} draggableId={item.id} index={itemIndex}>
               {provided => (

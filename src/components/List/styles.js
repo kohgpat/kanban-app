@@ -20,6 +20,10 @@ export const Items = styled.ul`
   margin: 0;
   list-style: none;
   min-height: 100%;
+
+  ${props => props.isDraggingOver && `
+    background-color: #f1f1f1;
+  `};
 `;
 
 export const Item = styled.li`
