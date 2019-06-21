@@ -35,14 +35,13 @@ export const Meta = styled.div`
 export const EditToggle = styled.button.attrs({ type: "button" })`
   border: 1px solid #b4bbc8;
   border-radius: 2px;
-  color: #b4bbc8;
+  color: #000;
   font-size: 13px;
   font-weight: 600;
   padding: 0.5rem 1rem;
 
   &:hover,
   &:focus {
-    color: #000;
     border-color: #3B93F8;
   }
 
