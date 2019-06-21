@@ -52,6 +52,13 @@ function Lists() {
     }
   };
 
+  const handleAddItem = list => {
+    dispatch({
+      type: "LISTS_ITEMS_ADD_ITEM",
+      list
+    });
+  };
+
   return (
     <s.Lists>
       <DragDropContext onDragEnd={onDragEnd}>
@@ -73,7 +80,7 @@ function Lists() {
                 item.assignee.name.toLowerCase().includes(filterTerm)
               );
             });
-          return <List key={list.id} list={list} items={items} />;
+          return <List key={list.id} list={list} items={items} onAddItem={handleAddItem} />;
         })}
       </DragDropContext>
     </s.Lists>

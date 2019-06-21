@@ -1,4 +1,5 @@
 import React from "react";
+import nanoid from "nanoid";
 
 const ListsContext = React.createContext();
 
@@ -21,11 +22,16 @@ const initialState = {
     },
     3: {
       id: 3,
-      name: "Done",
+      name: "In progress",
       itemIds: [7, 8, 9]
+    },
+    4: {
+      id: 4,
+      name: "Done",
+      itemIds: []
     }
   },
-  listIds: [1, 2, 3],
+  listIds: [1, 2, 3, 4],
   items: {
     1: {
       id: 1,
@@ -183,6 +189,36 @@ function listsReducer(state, action) {
             items: {
               ...state.lists.filter.items,
               term: action.term
+            }
+          }
+        }
+      };
+    }
+    case "LISTS_ITEMS_ADD_ITEM": {
+      const id = nanoid();
+
+      return {
+        ...state,
+        lists: {
+          ...state.lists,
+          lists: {
+            ...state.lists.lists,
+            [action.list.id]: {
+              ...state.lists.lists[action.list.id],
+              itemIds: [...state.lists.lists[action.list.id].itemIds, id]
+            }
+          },
+          items: {
+            ...state.lists.items,
+            [id]: {
+              id,
+              name: "New Item",
+              text: "Text placeholder",
+              assignee: {
+                id: 1,
+                name: "AL"
+              },
+              updatedAt: "Today"
             }
           }
         }

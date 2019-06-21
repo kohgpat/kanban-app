@@ -2,11 +2,11 @@ import React from "react";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import * as s from "./styles";
 
-const List = ({ list, items }) => (
+const List = ({ list, items, onAddItem }) => (
   <s.List>
     <s.Header>
       <s.Name>{list.name}</s.Name>
-      <s.AddButton>+</s.AddButton>
+      <s.AddButton onClick={() => onAddItem(list)}>+</s.AddButton>
     </s.Header>
 
     <Droppable droppableId={list.id}>
