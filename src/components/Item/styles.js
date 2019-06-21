@@ -20,7 +20,7 @@ const ButtonStyles = `
 `;
 
 const InputStyles = `
-  border: 0;
+  border: 1px solid #b4bbc8;
   height: 20px;
   padding: 1rem;
   font-size: 15px;
@@ -73,7 +73,13 @@ export const UpdatedAt = styled.span`
   color: #b4bbc8;
 `;
 
-export const ItemForm = styled.form``;
+export const ItemForm = styled.form`
+  background-color: #fff;
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.227355);
+  border-radius: 2px;
+  padding: 1rem;
+  margin-bottom: 20px;
+`;
 
 export const Row = styled.div`
   display: flex;
@@ -91,6 +97,7 @@ export const Input = styled.input.attrs({ type: "text" })`
 
 export const Textarea = styled.textarea`
   ${InputStyles}
+  height: auto;
 `;
 
 export const Submit = styled.button.attrs({ type: "submit" })`
