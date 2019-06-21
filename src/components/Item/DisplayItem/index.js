@@ -1,4 +1,5 @@
 import React from "react";
+import formatItemDate from "../../../utils/format-item-date";
 import * as s from "./styles";
 
 const DisplayItem = ({
@@ -16,7 +17,7 @@ const DisplayItem = ({
       <s.Text>{item.text}</s.Text>
 
       <s.Meta>
-        <s.UpdatedAt>{item.updatedAt}</s.UpdatedAt>
+        <s.UpdatedAt>{formatItemDate(item.updatedAt)}</s.UpdatedAt>
       </s.Meta>
 
       <s.Controls>
