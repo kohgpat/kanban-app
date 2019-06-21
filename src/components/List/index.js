@@ -4,7 +4,10 @@ import * as s from "./styles";
 
 const List = ({ list, items }) => (
   <s.List>
-    <s.Name>{list.name}</s.Name>
+    <s.Header>
+      <s.Name>{list.name}</s.Name>
+      <s.AddButton>+</s.AddButton>
+    </s.Header>
 
     <Droppable droppableId={list.id}>
       {(provided, snapshot) => (

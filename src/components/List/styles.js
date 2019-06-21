@@ -8,11 +8,28 @@ export const List = styled.li`
   margin: 1rem;
 `;
 
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+`;
+
 export const Name = styled.h4`
-  margin: 0 0 30px;
+  margin: 0;
   color: #272a43;
   font-size: 24px;
   line-height: 33px;
+`;
+
+export const AddButton = styled.button.attrs({ type: "button" })`
+  margin-left: auto;
+  border: 0;
+  border-radius: 50%;
+  background-color: #fff;
+  height: 28px;
+  width: 28px;
+  font-size: 16px;
+  font-weight: 600;
 `;
 
 export const Items = styled.ul`
