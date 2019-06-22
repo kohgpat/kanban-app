@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Screen from "../../components/Screen";
-import Flash from "../../components/Flash";
 import Topbar from "../../components/Topbar";
 import Content from "../../components/Content";
 import Sidebar from "../../components/Sidebar";
@@ -13,7 +12,6 @@ class Dashboard extends Component {
     return (
       <ListsProvider>
         <Screen>
-          <Flash />
           <Topbar />
 
           <Content>
