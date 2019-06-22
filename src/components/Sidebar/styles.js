@@ -8,7 +8,7 @@ export const Sidebar = styled.div`
   background-color: #fff;
   box-shadow: 4px 0px 7px rgba(0, 0, 0, 0.1);
   width: 72px;
-  padding-top: 68px;
+  padding-top: var(--topbar-height);
   z-index: 1;
 `;
 

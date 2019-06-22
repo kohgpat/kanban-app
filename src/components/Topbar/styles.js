@@ -7,7 +7,7 @@ import avatar from "./images/avatar.png";
 export const Topbar = styled.div`
   display: flex;
   align-items: center;
-  height: 68px;
+  height: var(--topbar-height);
   background-color: #fff;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
   position: fixed;

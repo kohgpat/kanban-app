@@ -1,3 +1,7 @@
+:root {
+  --topbar-height: 68px;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
