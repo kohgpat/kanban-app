@@ -1,5 +1,6 @@
 :root {
   --topbar-height: 68px;
+  --flash-height: 48px;
 }
 
 *, *::before, *::after {

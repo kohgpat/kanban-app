@@ -11,7 +11,7 @@ export const Topbar = styled.div`
   background-color: #fff;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 0;
+  top: var(--flash-height);
   right: 0;
   left: 0;
   z-index: 2;
