@@ -4,7 +4,8 @@ import {
   LISTS_ITEMS_SET_FILTER,
   LISTS_ITEMS_ADD_ITEM,
   LISTS_ITEMS_TOGGLE_EDIT,
-  LISTS_ITEMS_SAVE
+  LISTS_ITEMS_SAVE,
+  LISTS_ITEMS_DELETE
 } from "./actions";
 import reducer from "./reducer";
 
@@ -179,6 +180,36 @@ it("should update item on the list", () => {
 
   expect(newItem.isEditing).toEqual(false);
   expect(newItem.text).toEqual("New text");
+});
+
+it("should delete item from the list", () => {
+  const state = {
+    lists: {
+      lists: {
+        1: {
+          id: 1,
+          itemIds: [1]
+        }
+      },
+      items: {
+        1: {
+          id: 1,
+          isEditing: false
+        }
+      }
+    }
+  };
+
+  const action = {
+    type: LISTS_ITEMS_DELETE,
+    list: state.lists.lists[1],
+    item: state.lists.items[1]
+  };
+
+  const newState = reducer(state, action);
+
+  expect(newState.lists.lists[1].itemIds).toEqual([]);
+  expect(newState.lists.items).toEqual({});
 });
 
 it("should set filter", () => {
