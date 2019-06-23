@@ -34,6 +34,7 @@ export const Input = styled.input.attrs({ type: "text" })`
 export const Textarea = styled.textarea`
   ${InputStyles}
   height: auto;
+  resize: none;
 `;
 
 export const Submit = styled.button.attrs({ type: "submit" })`
