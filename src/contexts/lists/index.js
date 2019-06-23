@@ -1,4 +1,5 @@
 import React from "react";
+import { loadState } from "../../utils/localStorage";
 import initialState from "./initialState";
 import listsReducer from "./reducer";
 import {
@@ -14,8 +15,10 @@ import {
 const ListsContext = React.createContext();
 
 function ListsProvider(props) {
+  const listsPersistedState = loadState();
+
   const [state, dispatch] = React.useReducer(listsReducer, {
-    lists: initialState
+    lists: (listsPersistedState && listsPersistedState.lists) || initialState
   });
   const value = React.useMemo(() => [state, dispatch], [state]);
   return <ListsContext.Provider value={value} {...props} />;

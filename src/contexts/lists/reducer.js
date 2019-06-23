@@ -1,5 +1,6 @@
 import nanoid from "nanoid";
 import omit from "lodash/omit";
+import { saveState } from "../../utils/localStorage";
 import {
   LISTS_ITEMS_REORDER_IN_LIST,
   LISTS_ITEMS_MOVE_TO_LIST,
@@ -23,7 +24,7 @@ function reducer(state, action) {
         itemIds: itemIds
       };
 
-      return {
+      const newState = {
         ...state,
         lists: {
           ...state.lists,
@@ -33,6 +34,10 @@ function reducer(state, action) {
           }
         }
       };
+
+      saveState(newState);
+
+      return newState;
     }
     case LISTS_ITEMS_MOVE_TO_LIST: {
       const sourceItemIds = Array.from(action.sourceList.itemIds);
@@ -41,7 +46,7 @@ function reducer(state, action) {
       const destinationItemIds = Array.from(action.destinationList.itemIds);
       destinationItemIds.splice(action.destination.index, 0, action.itemId);
 
-      return {
+      const newState = {
         ...state,
         lists: {
           ...state.lists,
@@ -58,6 +63,10 @@ function reducer(state, action) {
           }
         }
       };
+
+      saveState(newState);
+
+      return newState;
     }
     case LISTS_ITEMS_SET_FILTER: {
       return {
@@ -77,7 +86,7 @@ function reducer(state, action) {
     case LISTS_ITEMS_ADD_ITEM: {
       const id = nanoid();
 
-      return {
+      const newState = {
         ...state,
         lists: {
           ...state.lists,
@@ -100,6 +109,10 @@ function reducer(state, action) {
           }
         }
       };
+
+      saveState(newState);
+
+      return newState;
     }
     case LISTS_ITEMS_TOGGLE_EDIT: {
       return {
@@ -117,7 +130,7 @@ function reducer(state, action) {
       };
     }
     case LISTS_ITEMS_SAVE: {
-      return {
+      const newState = {
         ...state,
         lists: {
           ...state.lists,
@@ -131,9 +144,13 @@ function reducer(state, action) {
           }
         }
       };
+
+      saveState(newState);
+
+      return newState;
     }
     case LISTS_ITEMS_DELETE: {
-      return {
+      const newState = {
         ...state,
         lists: {
           ...state.lists,
@@ -149,6 +166,10 @@ function reducer(state, action) {
           items: omit(state.lists.items, [action.item.id])
         }
       };
+
+      saveState(newState);
+
+      return newState;
     }
     default: {
       throw new Error(`Unsupported action type: ${action.type}`);
