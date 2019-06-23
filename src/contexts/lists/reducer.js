@@ -1,9 +1,18 @@
 import nanoid from "nanoid";
 import omit from "lodash/omit";
+import {
+  LISTS_ITEMS_REORDER_IN_LIST,
+  LISTS_ITEMS_MOVE_TO_LIST,
+  LISTS_ITEMS_SET_FILTER,
+  LISTS_ITEMS_ADD_ITEM,
+  LISTS_ITEMS_TOGGLE_EDIT,
+  LISTS_ITEMS_SAVE,
+  LISTS_ITEMS_DELETE
+} from "./actions";
 
 function reducer(state, action) {
   switch (action.type) {
-    case "LISTS_ITEMS_REORDER_IN_LIST": {
+    case LISTS_ITEMS_REORDER_IN_LIST: {
       const itemIds = Array.from(action.sourceList.itemIds);
 
       itemIds.splice(action.source.index, 1);
@@ -25,7 +34,7 @@ function reducer(state, action) {
         }
       };
     }
-    case "LISTS_ITEMS_MOVE_TO_LIST": {
+    case LISTS_ITEMS_MOVE_TO_LIST: {
       const sourceItemIds = Array.from(action.sourceList.itemIds);
       sourceItemIds.splice(action.source.index, 1);
 
@@ -50,7 +59,7 @@ function reducer(state, action) {
         }
       };
     }
-    case "LISTS_ITEMS_SET_FILTER": {
+    case LISTS_ITEMS_SET_FILTER: {
       return {
         ...state,
         lists: {
@@ -65,7 +74,7 @@ function reducer(state, action) {
         }
       };
     }
-    case "LISTS_ITEMS_ADD_ITEM": {
+    case LISTS_ITEMS_ADD_ITEM: {
       const id = nanoid();
 
       return {
@@ -92,7 +101,7 @@ function reducer(state, action) {
         }
       };
     }
-    case "LISTS_ITEMS_TOGGLE_EDIT": {
+    case LISTS_ITEMS_TOGGLE_EDIT: {
       return {
         ...state,
         lists: {
@@ -107,7 +116,7 @@ function reducer(state, action) {
         }
       };
     }
-    case "LISTS_ITEMS_SAVE": {
+    case LISTS_ITEMS_SAVE: {
       return {
         ...state,
         lists: {
@@ -123,7 +132,7 @@ function reducer(state, action) {
         }
       };
     }
-    case "LISTS_ITEMS_DELETE": {
+    case LISTS_ITEMS_DELETE: {
       return {
         ...state,
         lists: {
