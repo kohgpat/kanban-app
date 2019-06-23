@@ -19,8 +19,6 @@ const EditItem = ({
   if (closeFormKey) {
     if (name === "" && text === "") {
       onItemDelete(list, item);
-    } else {
-      onItemEdit(item);
     }
   }
 
@@ -37,10 +35,34 @@ const EditItem = ({
     autosize(ref);
   });
 
+  const validateItem = item => {
+    if (!item.name || !item.text) {
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
 
-    onItemSave({ ...item, name, text });
+    const itemToUpdate = {
+      ...item, name, text
+    };
+
+    if (!validateItem(itemToUpdate)) {
+      return;
+    }
+
+    onItemSave(itemToUpdate);
+  };
+
+  const handleChangeName = e => {
+    setName(e.target.value);
+  };
+
+  const handleChangeText = e => {
+    setText(e.target.value);
   };
 
   return (
@@ -51,7 +73,7 @@ const EditItem = ({
           name="name"
           value={name}
           ref={nameInputRef}
-          onChange={e => setName(e.target.value)}
+          onChange={handleChangeName}
         />
       </s.Row>
 
@@ -61,7 +83,7 @@ const EditItem = ({
           name="text"
           value={text}
           ref={textInputRef}
-          onChange={e => setText(e.target.value)}
+          onChange={handleChangeText}
         />
       </s.Row>
 
