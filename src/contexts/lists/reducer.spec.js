@@ -1,6 +1,7 @@
 import {
   LISTS_ITEMS_REORDER_IN_LIST,
-  LISTS_ITEMS_MOVE_TO_LIST
+  LISTS_ITEMS_MOVE_TO_LIST,
+  LISTS_ITEMS_SET_FILTER
 } from "./actions";
 import reducer from "./reducer";
 
@@ -90,6 +91,35 @@ it("should move items between lists", () => {
         2: {
           id: 2,
           itemIds: [1]
+        }
+      }
+    }
+  };
+
+  expect(reducer(state, action)).toEqual(newState);
+});
+
+it("should set filter", () => {
+  const state = {
+    lists: {
+      filter: {
+        items: {
+          term: ""
+        }
+      }
+    }
+  };
+
+  const action = {
+    type: LISTS_ITEMS_SET_FILTER,
+    term: "Hello"
+  };
+
+  const newState = {
+    lists: {
+      filter: {
+        items: {
+          term: "Hello"
         }
       }
     }
