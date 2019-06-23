@@ -4,7 +4,7 @@ import { ButtonStyles } from "../styles";
 const InputStyles = `
   border: 1px solid #b4bbc8;
   height: 20px;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   font-size: 15px;
 
   &::placeholder {
