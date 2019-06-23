@@ -12,7 +12,8 @@ function Lists() {
     addItemToList,
     itemToggleEdit,
     saveItem,
-    deleteItem
+    deleteItem,
+    displayFiltered
   } = useLists();
 
   const lists = state.lists.listIds.map(listId => state.lists.lists[listId]);
@@ -73,22 +74,9 @@ function Lists() {
     <s.Lists>
       <DragDropContext onDragEnd={onDragEnd}>
         {lists.map(list => {
-          const items = list.itemIds
-            .map(itemId => state.lists.items[itemId])
-            .filter(item => {
-              const filterTerm =
-                state.lists.filter.items.term &&
-                state.lists.filter.items.term.toLowerCase();
+          const items = displayFiltered(list.itemIds
+            .map(itemId => state.lists.items[itemId]));
 
-              if (!filterTerm) {
-                return item;
-              }
-
-              return (
-                item.name.toLowerCase().includes(filterTerm) ||
-                item.text.toLowerCase().includes(filterTerm)
-              );
-            });
           return (
             <List
               key={list.id}

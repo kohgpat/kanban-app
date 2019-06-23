@@ -93,6 +93,23 @@ function useLists() {
     dispatch({ type: LISTS_ITEMS_SET_FILTER, term });
   };
 
+  const displayFiltered = items => {
+    return items.filter(item => {
+      const filterTerm =
+        state.lists.filter.items.term &&
+        state.lists.filter.items.term.toLowerCase();
+
+      if (!filterTerm) {
+        return item;
+      }
+
+      return (
+        item.name.toLowerCase().includes(filterTerm) ||
+        item.text.toLowerCase().includes(filterTerm)
+      );
+    });
+  };
+
   return {
     state,
     dispatch,
@@ -102,7 +119,8 @@ function useLists() {
     itemToggleEdit,
     saveItem,
     deleteItem,
-    setItemsFilter
+    setItemsFilter,
+    displayFiltered
   };
 }
 
