@@ -3,7 +3,7 @@ import { useLists } from "../../contexts/lists";
 import * as s from "./styles";
 
 const Topbar = () => {
-  const { dispatch, setItemsFilter } = useLists();
+  const { setItemsFilter } = useLists();
 
   const [query, setQuery] = useState("");
 

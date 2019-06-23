@@ -7,7 +7,8 @@ import {
   LISTS_ITEMS_ADD_ITEM,
   LISTS_ITEMS_TOGGLE_EDIT,
   LISTS_ITEMS_SAVE,
-  LISTS_ITEMS_DELETE
+  LISTS_ITEMS_DELETE,
+  LISTS_ITEMS_SET_FILTER
 } from "./actions";
 
 const ListsContext = React.createContext();
@@ -85,6 +86,10 @@ function useLists() {
     });
   };
 
+  const setItemsFilter = term => {
+    dispatch({ type: LISTS_ITEMS_SET_FILTER, term });
+  };
+
   return {
     state,
     dispatch,
@@ -93,7 +98,8 @@ function useLists() {
     addItemToList,
     itemToggleEdit,
     saveItem,
-    deleteItem
+    deleteItem,
+    setItemsFilter
   };
 }
 
