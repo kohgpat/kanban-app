@@ -1,7 +1,8 @@
 import {
   LISTS_ITEMS_REORDER_IN_LIST,
   LISTS_ITEMS_MOVE_TO_LIST,
-  LISTS_ITEMS_SET_FILTER
+  LISTS_ITEMS_SET_FILTER,
+  LISTS_ITEMS_ADD_ITEM
 } from "./actions";
 import reducer from "./reducer";
 
@@ -97,6 +98,27 @@ it("should move items between lists", () => {
   };
 
   expect(reducer(state, action)).toEqual(newState);
+});
+
+it("should add item to the list with empty values", () => {
+  const state = {
+    lists: {
+      lists: {
+        1: {
+          id: 1,
+          itemIds: []
+        }
+      },
+      items: {}
+    }
+  };
+
+  const action = {
+    type: LISTS_ITEMS_ADD_ITEM,
+    list: state.lists.lists[1]
+  };
+
+  expect(reducer(state, action).lists.lists[1].itemIds.length).toEqual(1);
 });
 
 it("should set filter", () => {
