@@ -7,7 +7,6 @@ import * as s from "./styles";
 function Lists() {
   const {
     state,
-    dispatch,
     reorderItems,
     moveItemBetweenLists,
     addItemToList,
