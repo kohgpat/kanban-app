@@ -3,18 +3,14 @@ import { useLists } from "../../contexts/lists";
 import * as s from "./styles";
 
 const Topbar = () => {
-  const { dispatch } = useLists();
+  const { dispatch, setItemsFilter } = useLists();
 
   const [query, setQuery] = useState("");
-
-  const filterListsItems = term => {
-    dispatch({ type: "LISTS_ITEMS_SET_FILTER", term });
-  };
 
   const handleChangeSearchQuery = e => {
     const { value } = e.target;
     setQuery(value);
-    filterListsItems(value);
+    setItemsFilter(value);
   };
 
   return (
