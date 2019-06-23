@@ -17,14 +17,3 @@ export const ButtonStyles = `
     background-color: #3b93f8;
   }
 `;
-
-export const InputStyles = `
-  border: 1px solid #b4bbc8;
-  height: 20px;
-  padding: 1rem;
-  font-size: 15px;
-
-  &::placeholder {
-    color: #C5CACD;
-  }
-`;

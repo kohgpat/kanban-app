@@ -1,5 +1,16 @@
 import styled from "styled-components";
-import { InputStyles, ButtonStyles } from "../styles";
+import { ButtonStyles } from "../styles";
+
+const InputStyles = `
+  border: 1px solid #b4bbc8;
+  height: 20px;
+  padding: 1rem;
+  font-size: 15px;
+
+  &::placeholder {
+    color: #C5CACD;
+  }
+`;
 
 export const ItemForm = styled.form`
   background-color: #fff;
