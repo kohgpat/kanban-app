@@ -24,7 +24,7 @@ export const Text = styled.p`
   font-size: 14px;
   line-height: 24px;
   color: rgba(100, 102, 120, 0.54);
-  max-height: 48px;
+  height: 48px;
   overflow-x: auto;
 `;
 
