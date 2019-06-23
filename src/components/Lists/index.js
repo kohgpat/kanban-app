@@ -5,7 +5,16 @@ import List from "../List";
 import * as s from "./styles";
 
 function Lists() {
-  const { state, dispatch } = useLists();
+  const {
+    state,
+    dispatch,
+    reorderItems,
+    moveItemBetweenLists,
+    addItemToList,
+    itemToggleEdit,
+    saveItem,
+    deleteItem
+  } = useLists();
 
   const lists = state.lists.listIds.map(listId => state.lists.lists[listId]);
 
@@ -28,57 +37,37 @@ function Lists() {
 
     if (sourceList === destinationList) {
       // Reorder items in the same list
-      dispatch({
-        type: "LISTS_ITEMS_REORDER_IN_LIST",
-        sourceList,
-        source,
-        destination,
-        itemId: draggableId
-      });
+      reorderItems(sourceList, source, destination, draggableId);
 
       return;
     } else {
       // Move items between lists
-      dispatch({
-        type: "LISTS_ITEMS_MOVE_TO_LIST",
+      moveItemBetweenLists(
         sourceList,
         destinationList,
         source,
         destination,
-        itemId: draggableId
-      });
+        draggableId
+      );
 
       return;
     }
   };
 
   const handleAddItem = list => {
-    dispatch({
-      type: "LISTS_ITEMS_ADD_ITEM",
-      list
-    });
+    addItemToList(list);
   };
 
   const handleToggleItemEdit = item => {
-    dispatch({
-      type: "LISTS_ITEMS_TOGGLE_EDIT",
-      item
-    });
+    itemToggleEdit(item);
   };
 
   const handleItemSave = item => {
-    dispatch({
-      type: "LISTS_ITEMS_SAVE",
-      item
-    });
+    saveItem(item);
   };
 
   const handleToggleItemDelete = (list, item) => {
-    dispatch({
-      type: "LISTS_ITEMS_DELETE",
-      list,
-      item
-    });
+    deleteItem(list, item);
   };
 
   return (
