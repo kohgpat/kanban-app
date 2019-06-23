@@ -50,4 +50,12 @@ export const Textarea = styled.textarea`
 
 export const Submit = styled.button.attrs({ type: "submit" })`
   ${ButtonStyles}
+  color: #fff;
+  border-color: #3b93f8;
+  background-color: #3b93f8;
+
+  &:hover,
+  &:focus {
+    border-color: #3b93f8;
+  }
 `;
