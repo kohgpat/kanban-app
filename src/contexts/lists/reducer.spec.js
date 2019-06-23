@@ -2,7 +2,8 @@ import {
   LISTS_ITEMS_REORDER_IN_LIST,
   LISTS_ITEMS_MOVE_TO_LIST,
   LISTS_ITEMS_SET_FILTER,
-  LISTS_ITEMS_ADD_ITEM
+  LISTS_ITEMS_ADD_ITEM,
+  LISTS_ITEMS_TOGGLE_EDIT
 } from "./actions";
 import reducer from "./reducer";
 
@@ -119,6 +120,32 @@ it("should add item to the list with empty values", () => {
   };
 
   expect(reducer(state, action).lists.lists[1].itemIds.length).toEqual(1);
+});
+
+it("should toggle edit flag on item", () => {
+  const state = {
+    lists: {
+      lists: {
+        1: {
+          id: 1,
+          itemIds: [1]
+        }
+      },
+      items: {
+        1: {
+          id: 1,
+          isEditing: false
+        }
+      }
+    }
+  };
+
+  const action = {
+    type: LISTS_ITEMS_TOGGLE_EDIT,
+    item: state.lists.items[1]
+  };
+
+  expect(reducer(state, action).lists.items[1].isEditing).toEqual(true);
 });
 
 it("should set filter", () => {
