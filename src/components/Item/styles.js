@@ -1,6 +1,7 @@
 export const ButtonStyles = `
   border: 1px solid #b4bbc8;
   border-radius: 2px;
+  background-color: #fff;
   color: #000;
   font-size: 13px;
   font-weight: 600;
